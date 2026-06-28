@@ -515,7 +515,7 @@ export default function DashboardPage() {
             <motion.div 
               whileHover={{ y: -5, borderColor: '#FF3366' }}
               onClick={() => {
-                setPartyData({ type: '', name: '', age: '', date: '', time: '', location: '', theme: '', tier: 'basic' })
+                setPartyData({ type: '', name: '', hostName: '', age: '', date: '', time: '', location: '', theme: '', tier: 'basic' })
                 setStep(1)
                 setModalMode('create')
                 setIsModalOpen(true)
