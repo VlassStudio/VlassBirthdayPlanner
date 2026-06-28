@@ -1436,7 +1436,7 @@ export default function DashboardPage() {
                 <button onClick={() => {
                   setIsModalOpen(false)
                   if (modalMode === 'create') {
-                    setPartyData({ type: '', name: '', age: '', date: '', time: '', location: '', theme: '', tier: 'basic' })
+                    setPartyData({ type: '', name: '', hostName: '', age: '', date: '', time: '', location: '', theme: '', tier: 'basic' })
                     setStep(1)
                   }
                 }} style={{ background: '#F1F5F9', border: 'none', width: 36, height: 36, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#64748B' }}>
