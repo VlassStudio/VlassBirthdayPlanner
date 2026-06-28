@@ -56,7 +56,7 @@ const PhoneMockup = ({ activeTab, t }: { activeTab: 'invite' | 'dashboard', t: a
       transform: 'rotate(2deg)', transition: 'transform 0.3s'
     }} className="phone-mockup">
       <style>{`.phone-mockup:hover { transform: rotate(0deg) translateY(-10px); }`}</style>
-      
+
       {/* Phone Notch */}
       <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: 100, height: 24, background: '#27272A', borderBottomLeftRadius: 16, borderBottomRightRadius: 16, zIndex: 20 }} />
       {/* Glass Reflection */}
@@ -73,15 +73,15 @@ const PhoneMockup = ({ activeTab, t }: { activeTab: 'invite' | 'dashboard', t: a
           <AnimatePresence mode="wait">
             {!isOpen ? (
               <motion.div key="closed" exit={{ y: -500, opacity: 0 }} style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, #FFB3C6 0%, #FF3366 100%)', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 32 }}>
-                
+
                 {/* Decorative Elements */}
                 <div style={{ position: 'absolute', top: -50, right: -50, width: 200, height: 200, background: 'rgba(255,255,255,0.1)', borderRadius: '50%' }} />
                 <div style={{ position: 'absolute', bottom: -50, left: -50, width: 150, height: 150, background: 'rgba(255,255,255,0.1)', borderRadius: '50%' }} />
-                
+
                 {/* Text above Envelope */}
                 <div style={{ textAlign: 'center', color: 'white', zIndex: 5, padding: '0 20px' }}>
                   <p style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 8, opacity: 0.9 }}>You&apos;re Invited</p>
-                  <h3 style={{ fontSize: 28, fontWeight: 900, lineHeight: 1.1, fontFamily: 'serif' }}>The<br/>Party</h3>
+                  <h3 style={{ fontSize: 28, fontWeight: 900, lineHeight: 1.1, fontFamily: 'serif' }}>The<br />Party</h3>
                 </div>
 
                 <motion.div animate={{ scale: [1, 1.05, 1], y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4 }}>
@@ -91,7 +91,7 @@ const PhoneMockup = ({ activeTab, t }: { activeTab: 'invite' | 'dashboard', t: a
                     <div style={{ position: 'absolute', right: 0, width: 0, height: 0, borderTop: '55px solid transparent', borderBottom: '55px solid transparent', borderRight: '80px solid rgba(255,255,255,0.8)', zIndex: 1 }} />
                     <div style={{ position: 'absolute', bottom: 0, width: 0, height: 0, borderLeft: '80px solid transparent', borderRight: '80px solid transparent', borderBottom: '55px solid #FFE5EC', zIndex: 2 }} />
                     <div style={{ position: 'absolute', top: 0, width: 0, height: 0, borderLeft: '80px solid transparent', borderRight: '80px solid transparent', borderTop: '55px solid white', zIndex: 3, filter: 'drop-shadow(0 4px 4px rgba(0,0,0,0.05))' }} />
-                    
+
                     {/* Wax Seal */}
                     <div style={{ width: 40, height: 40, background: '#FF3366', borderRadius: '50%', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 10px rgba(225,29,72,0.5)', border: '2px solid rgba(255,255,255,0.5)' }}>
                       <Heart size={20} color="white" fill="white" />
@@ -201,7 +201,7 @@ export default function LandingPage() {
 
   return (
     <div style={{ background: '#FFFDF9', color: '#18181B', fontFamily: 'var(--font-jakarta)', overflowX: 'hidden' }}>
-      
+
       {/* ── CUSTOM CSS ── */}
       <style>{`
         html, body {
@@ -344,15 +344,15 @@ export default function LandingPage() {
             <PartyPopper size={22} color="white" />
           </div>
           <span style={{ fontWeight: 900, fontSize: 26, letterSpacing: '-0.03em', color: '#FF3366' }}>Glyka Party box</span>
-          <span style={{ fontSize: 14, fontWeight: 600, color: '#64748b', marginLeft: 8 }}>by Vlass</span>
+          <span style={{ fontSize: 14, fontWeight: 600, color: '#64748b', marginLeft: 8 }}></span>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
           <LanguageSwitcher currentLocale={locale} variant="pill" />
-          
+
           {/* Mobile Login Button (Icon) */}
           <Link href="/login" className="mobile-login">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" y1="12" x2="3" y2="12" /></svg>
           </Link>
           <Link href="/login" className="nav-button" style={{
             padding: '12px 28px', borderRadius: 100, fontSize: 16, fontWeight: 900,
@@ -374,7 +374,7 @@ export default function LandingPage() {
         <div className="fun-bg" />
         <FloatingEmojis />
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 16px', position: 'relative', zIndex: 10 }} className="hero-grid">
-          
+
           <div style={{ textAlign: 'left' }}>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', background: '#FFE5EC', borderRadius: 100, marginBottom: 32, border: '2px solid #FFB3C6' }}>
               <span style={{ fontSize: 14, fontWeight: 900, letterSpacing: '0.05em', color: '#E11D48', textTransform: 'uppercase' }}>{t('hero_badge')}</span>
@@ -392,7 +392,7 @@ export default function LandingPage() {
             </motion.div>
           </div>
 
-            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 12, marginBottom: 24, width: '100%' }}>
               <button onClick={() => setDemoTab('invite')} style={{ padding: '10px 20px', borderRadius: 100, fontWeight: 800, fontSize: 14, border: 'none', cursor: 'pointer', transition: 'all 0.2s', display: 'flex', alignItems: 'center', gap: 8, background: demoTab === 'invite' ? '#FF3366' : 'white', color: demoTab === 'invite' ? 'white' : '#71717A', boxShadow: demoTab === 'invite' ? '0 8px 20px rgba(255,51,102,0.3)' : '0 4px 12px rgba(0,0,0,0.05)' }}>
                 <PlayCircle size={18} /> {t('demo_tab_invite')}
@@ -414,7 +414,7 @@ export default function LandingPage() {
       <section id="features" className="section-padding" style={{ background: 'white', borderTop: '2px dashed rgba(0,0,0,0.05)', position: 'relative', zIndex: 10, overflow: 'hidden' }}>
         <div className="blob" style={{ top: '10%', right: '-10%', width: 500, height: 500, background: '#FF3366', opacity: 0.15 }} />
         <div className="blob" style={{ bottom: '10%', left: '-10%', width: 600, height: 600, background: '#818CF8', opacity: 0.15 }} />
-        
+
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 20 }}>
           <div style={{ textAlign: 'center', marginBottom: 40 }}>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 900, letterSpacing: '-0.03em', marginBottom: 16 }}>{t('fitur_judul')}</h2>
@@ -428,7 +428,7 @@ export default function LandingPage() {
                 {/* CSS Art Background */}
                 <div style={{ position: 'absolute', top: -30, right: -30, width: 150, height: 150, background: 'rgba(255,255,255,0.2)', borderRadius: '50%', filter: 'blur(10px)' }} />
                 <div style={{ position: 'absolute', bottom: -20, left: -20, width: 100, height: 100, background: 'rgba(255,255,255,0.1)', borderRadius: '30%', transform: 'rotate(45deg)' }} />
-                
+
                 {/* Floating Icons */}
                 <motion.div animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }} style={{ position: 'absolute', top: '15%', left: '15%' }}>
                   <PartyPopper size={48} color="white" opacity={0.9} />
@@ -436,7 +436,7 @@ export default function LandingPage() {
                 <motion.div animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }} style={{ position: 'absolute', bottom: '15%', right: '15%' }}>
                   <Gift size={56} color="white" opacity={0.9} />
                 </motion.div>
-                
+
                 {/* Centerpiece */}
                 <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }} style={{ width: 100, height: 100, background: 'white', borderRadius: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 30px rgba(225,29,72,0.4)', zIndex: 10 }}>
                   <span style={{ fontSize: 50 }}>🎠</span>
@@ -444,7 +444,7 @@ export default function LandingPage() {
               </div>
               <h3 style={{ fontSize: 32, fontWeight: 900, color: '#E11D48', marginBottom: 16 }}>{t('mode_anak')}</h3>
               <p style={{ fontSize: 16, color: '#BE123C', fontWeight: 600, marginBottom: 32, lineHeight: 1.6 }}>{t('mode_anak_desc')}</p>
-              
+
               <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
                 {[
                   { icon: Shield, title: t('fitur_anak_1_title'), desc: t('fitur_anak_1_desc') },
@@ -472,7 +472,7 @@ export default function LandingPage() {
                 <div style={{ position: 'absolute', top: -50, right: -50, width: 200, height: 200, background: 'radial-gradient(circle, rgba(252,211,77,0.15) 0%, transparent 70%)' }} />
                 <div style={{ position: 'absolute', bottom: -30, left: -30, width: 150, height: 150, border: '2px dashed rgba(252,211,77,0.2)', borderRadius: '50%', animation: 'spin 20s linear infinite' }} />
                 <style>{`@keyframes spin { 100% { transform: rotate(360deg); } }`}</style>
-                
+
                 {/* Floating Icons */}
                 <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }} style={{ position: 'absolute', top: '20%', left: '20%' }}>
                   <Crown size={40} color="#FCD34D" opacity={0.8} />
@@ -480,7 +480,7 @@ export default function LandingPage() {
                 <motion.div animate={{ y: [0, 10, 0], rotate: [0, 15, 0] }} transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }} style={{ position: 'absolute', bottom: '20%', right: '20%' }}>
                   <Zap size={48} color="#FCD34D" opacity={0.8} />
                 </motion.div>
-                
+
                 {/* Centerpiece */}
                 <motion.div animate={{ scale: [1, 1.02, 1] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }} style={{ width: 100, height: 100, background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', border: '1px solid rgba(252,211,77,0.2)', borderRadius: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 10 }}>
                   <span style={{ fontSize: 50 }}>🍾</span>
@@ -488,7 +488,7 @@ export default function LandingPage() {
               </div>
               <h3 style={{ fontSize: 32, fontWeight: 900, color: '#FCD34D', marginBottom: 16 }}>{t('mode_dewasa')}</h3>
               <p style={{ fontSize: 16, color: '#A78BFA', fontWeight: 600, marginBottom: 32, lineHeight: 1.6 }}>{t('mode_dewasa_desc')}</p>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                 {[
                   { icon: Crown, title: t('fitur_dewasa_1_title'), desc: t('fitur_dewasa_1_desc') },
@@ -543,7 +543,7 @@ export default function LandingPage() {
       <section className="section-padding" style={{ background: '#FFFDF9', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '10%', left: '-10%', width: 500, height: 500, background: '#FF3366', opacity: 0.05, filter: 'blur(100px)', borderRadius: '50%' }} />
         <div style={{ position: 'absolute', bottom: '10%', right: '-10%', width: 500, height: 500, background: '#FCD34D', opacity: 0.1, filter: 'blur(100px)', borderRadius: '50%' }} />
-        
+
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 20 }}>
           <div style={{ textAlign: 'center', marginBottom: 80 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#FFE5EC', padding: '8px 16px', borderRadius: 100, color: '#FF3366', fontWeight: 800, marginBottom: 24 }}>
@@ -651,8 +651,8 @@ export default function LandingPage() {
                       <div style={{ fontSize: 12, color: '#DC2626', fontWeight: 700 }}>Alergi</div>
                     </div>
                     <div style={{ gridColumn: '1 / -1', height: 60, background: '#F4F4F5', borderRadius: 16, display: 'flex', alignItems: 'center', padding: '0 16px', gap: 12 }}>
-                       <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#10B981' }} />
-                       <div style={{ height: 10, width: '50%', background: '#E4E4E7', borderRadius: 4 }} />
+                      <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#10B981' }} />
+                      <div style={{ height: 10, width: '50%', background: '#E4E4E7', borderRadius: 4 }} />
                     </div>
                   </div>
                 </div>
@@ -666,7 +666,7 @@ export default function LandingPage() {
       <section id="pricing" className="section-padding" style={{ background: '#FFFDF9', position: 'relative', overflow: 'hidden' }}>
         <div className="fun-bg" style={{ opacity: 0.1 }} />
         <div className="blob" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 800, height: 800, background: '#FCD34D', opacity: 0.2 }} />
-        
+
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 20 }}>
           <div style={{ textAlign: 'center', marginBottom: 60 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#FFE5EC', padding: '8px 16px', borderRadius: 100, color: '#FF3366', fontWeight: 800, marginBottom: 24 }}>
@@ -738,7 +738,7 @@ export default function LandingPage() {
               Dicintai Ribuan Perencana Pesta
             </h2>
           </div>
-          
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: 32, borderRadius: 24, border: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ display: 'flex', gap: 4, color: '#FCD34D', marginBottom: 20 }}><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /></div>
@@ -751,7 +751,7 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-            
+
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: 32, borderRadius: 24, border: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ display: 'flex', gap: 4, color: '#FCD34D', marginBottom: 20 }}><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /></div>
               <p style={{ fontSize: 18, lineHeight: 1.6, marginBottom: 24, color: '#E4E4E7' }}>"Tampilan undangan dewasanya elegan banget, kayak undangan brand luxury. Budget tracker-nya sangat membantu mengontrol pengeluaran."</p>
@@ -763,7 +763,7 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-            
+
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: 32, borderRadius: 24, border: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ display: 'flex', gap: 4, color: '#FCD34D', marginBottom: 20 }}><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /></div>
               <p style={{ fontSize: 18, lineHeight: 1.6, marginBottom: 24, color: '#E4E4E7' }}>"Fitur tracking alergi benar-benar menyelamatkan! Ada 3 tamu yang alergi kacang dan sistem ini memastikan saya tidak lupa."</p>
@@ -815,12 +815,12 @@ export default function LandingPage() {
       <section className="section-padding" style={{ padding: '120px 24px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '10%', left: '5%', width: 300, height: 300, background: '#FF3366', filter: 'blur(100px)', opacity: 0.1, borderRadius: '50%' }} />
         <div style={{ position: 'absolute', bottom: '10%', right: '5%', width: 400, height: 400, background: '#4F46E5', filter: 'blur(120px)', opacity: 0.1, borderRadius: '50%' }} />
-        
+
         <div style={{ maxWidth: 1000, margin: '0 auto', background: 'linear-gradient(135deg, rgba(255,51,102,0.95) 0%, rgba(255,153,51,0.95) 100%)', borderRadius: 40, padding: '80px 40px', textAlign: 'center', color: 'white', position: 'relative', boxShadow: '0 40px 80px rgba(255,51,102,0.25), inset 0 0 0 4px rgba(255,255,255,0.2)', overflow: 'hidden', backdropFilter: 'blur(20px)' }}>
           {/* Decorative shapes inside CTA */}
           <div style={{ position: 'absolute', top: -30, right: -30, width: 150, height: 150, background: 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)', opacity: 0.5, borderRadius: '50%' }} />
           <div style={{ position: 'absolute', bottom: -50, left: -20, width: 200, height: 200, border: '40px solid rgba(255,255,255,0.1)', borderRadius: '50%' }} />
-          
+
           <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ background: 'rgba(255,255,255,0.2)', padding: '12px 24px', borderRadius: 100, marginBottom: 32, backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.3)', fontWeight: 800, letterSpacing: 1, textTransform: 'uppercase', fontSize: 14 }}>
               🎉 Mulai Perjalanan Magis Anda
@@ -844,7 +844,7 @@ export default function LandingPage() {
       <footer style={{ background: '#09090B', color: '#A1A1AA', padding: '100px 24px 40px', position: 'relative', overflow: 'hidden' }}>
         {/* Top glossy divider */}
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)' }} />
-        
+
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 60, marginBottom: 80 }}>
             {/* Brand Section */}
@@ -868,17 +868,17 @@ export default function LandingPage() {
               {/* Social icons */}
               <div style={{ display: 'flex', gap: 16, marginTop: 8 }}>
                 <Link href="https://instagram.com/vlass.studio" target="_blank" style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', cursor: 'pointer', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
                 </Link>
                 <Link href="https://twitter.com/vlass_studio" target="_blank" style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', cursor: 'pointer', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" /></svg>
                 </Link>
                 <Link href="https://youtube.com/@vlass.studio" target="_blank" style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', cursor: 'pointer', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 7.1C2.5 7.1 2 9.5 2 12c0 2.5.5 4.9.5 4.9 0 0 2.5 1.1 9.5 1.1s9.5-1.1 9.5-1.1c0 0 .5-2.4.5-4.9 0-2.5-.5-4.9-.5-4.9 0 0-2.5-1.1-9.5-1.1C5 6 2.5 7.1 2.5 7.1z"/><path d="m9.75 15.02 5.75-3.02-5.75-3.02z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 7.1C2.5 7.1 2 9.5 2 12c0 2.5.5 4.9.5 4.9 0 0 2.5 1.1 9.5 1.1s9.5-1.1 9.5-1.1c0 0 .5-2.4.5-4.9 0-2.5-.5-4.9-.5-4.9 0 0-2.5-1.1-9.5-1.1C5 6 2.5 7.1 2.5 7.1z" /><path d="m9.75 15.02 5.75-3.02-5.75-3.02z" /></svg>
                 </Link>
               </div>
             </div>
-            
+
             {/* Links 1 */}
             <div>
               <h4 style={{ color: 'white', fontWeight: 800, marginBottom: 24, fontSize: 18, letterSpacing: '0.05em' }}>Eksplorasi</h4>
@@ -888,7 +888,7 @@ export default function LandingPage() {
                 <li><Link href="#pricing" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 16, fontWeight: 500, transition: 'color 0.2s ease' }}>Harga Paket</Link></li>
               </ul>
             </div>
-            
+
             {/* Links 2 */}
             <div>
               <h4 style={{ color: 'white', fontWeight: 800, marginBottom: 24, fontSize: 18, letterSpacing: '0.05em' }}>Bantuan</h4>
@@ -898,10 +898,10 @@ export default function LandingPage() {
               </ul>
             </div>
           </div>
-          
+
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 40, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <p style={{ margin: 0, fontSize: 16, color: '#71717A', fontWeight: 500, textAlign: 'center', lineHeight: 1.6 }}>
-              © 2026 Glyka Party box by Vlass - Birthday planning and invitation.<br/>
+              © 2026 Glyka Party box  - Birthday planning and invitation.<br />
               A product by <strong>Vlass Studio</strong>. Dibuat dengan <Heart size={16} style={{ display: 'inline', color: '#FF3366', margin: '0 4px', verticalAlign: 'text-bottom' }} fill="#FF3366" /> untuk senyum Anda.
             </p>
           </div>

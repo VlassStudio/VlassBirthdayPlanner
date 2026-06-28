@@ -24,9 +24,9 @@ export default function DashboardLayout({
   const [isSwitcherOpen, setIsSwitcherOpen] = useState(false)
   const [parties, setParties] = useState<any[]>([])
   const [activePartyId, setActivePartyId] = useState<string | null>(null)
-  
+
   const activeParty = parties.find(p => p.id === activePartyId)
-  
+
   const isListView = searchParams.get('view') === 'list' || activePartyId === null
 
   // Notification and Toast State
@@ -38,7 +38,7 @@ export default function DashboardLayout({
     if (typeof window !== 'undefined') {
       const savedParties = localStorage.getItem('vlass_parties')
       if (savedParties) setParties(JSON.parse(savedParties))
-      
+
       const activeId = localStorage.getItem('vlass_active_party_id')
       setActivePartyId(activeId)
 
@@ -47,12 +47,12 @@ export default function DashboardLayout({
 
       // Listen for custom event when parties change in other components
       const handleStorageChange = () => {
-         const p = localStorage.getItem('vlass_parties')
-         if (p) setParties(JSON.parse(p))
-         const aId = localStorage.getItem('vlass_active_party_id')
-         setActivePartyId(aId)
+        const p = localStorage.getItem('vlass_parties')
+        if (p) setParties(JSON.parse(p))
+        const aId = localStorage.getItem('vlass_active_party_id')
+        setActivePartyId(aId)
       }
-      
+
       const handleGuestsUpdate = () => {
         const g = localStorage.getItem('vlass_guests')
         if (g) setAllGuests(JSON.parse(g))
@@ -96,10 +96,10 @@ export default function DashboardLayout({
 
   return (
     <div style={{ display: 'flex', height: '100vh', overflow: 'hidden', background: '#F8FAFC' }}>
-      
+
       {/* Mobile Overlay */}
       {sidebarOpen && (
-        <div 
+        <div
           className="sidebar-overlay hide-on-desktop"
           onClick={() => setSidebarOpen(false)}
           style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(15,23,42,0.4)', zIndex: 40, backdropFilter: 'blur(2px)' }}
@@ -112,34 +112,34 @@ export default function DashboardLayout({
         display: 'flex', flexDirection: 'column', position: 'sticky', top: 0, height: '100vh',
         zIndex: 50
       }} className={`sidebar-container ${sidebarOpen ? 'open' : ''}`}>
-        
+
         {/* Mobile Close Button */}
-        <button 
+        <button
           className="hide-on-desktop"
           onClick={() => setSidebarOpen(false)}
           style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none', cursor: 'pointer', zIndex: 60 }}
         >
           <X size={24} color="#64748B" />
         </button>
-        
+
         {/* Logo */}
         <div style={{ padding: '24px', display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ 
-            width: 36, height: 36, borderRadius: 10, 
-            background: 'linear-gradient(135deg, #FF3366, #FF9933)', 
-            display: 'flex', alignItems: 'center', justifyContent: 'center' 
+          <div style={{
+            width: 36, height: 36, borderRadius: 10,
+            background: 'linear-gradient(135deg, #FF3366, #FF9933)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center'
           }}>
             <PartyPopper size={20} color="white" />
           </div>
           <span style={{ fontWeight: 900, fontSize: 20, color: '#0F172A', letterSpacing: '-0.03em' }}>Glyka Party box</span>
-          <span style={{ fontSize: 12, fontWeight: 600, color: '#64748b', marginLeft: 6 }}>by Vlass</span>
+          <span style={{ fontSize: 12, fontWeight: 600, color: '#64748b', marginLeft: 6 }}></span>
         </div>
 
         {/* Event Switcher */}
         <div style={{ padding: '0 16px', marginTop: 16 }}>
           <p style={{ fontSize: 11, fontWeight: 700, color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8, paddingLeft: 12 }}>Pesta Aktif</p>
           <div style={{ position: 'relative' }}>
-            <div 
+            <div
               onClick={() => setIsSwitcherOpen(!isSwitcherOpen)}
               style={{
                 width: '100%', padding: '10px 12px', borderRadius: 12, border: '1.5px solid #E2E8F0',
@@ -156,7 +156,7 @@ export default function DashboardLayout({
               </span>
               <span style={{ color: '#64748B', fontSize: 10, transform: isSwitcherOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'all 0.2s' }}>▼</span>
             </div>
-            
+
             <AnimatePresence>
               {isSwitcherOpen && (
                 <motion.div
@@ -172,8 +172,8 @@ export default function DashboardLayout({
                 >
                   <div style={{ maxHeight: 200, overflowY: 'auto' }}>
                     {parties.map(p => (
-                      <div 
-                        key={p.id} 
+                      <div
+                        key={p.id}
                         onClick={() => {
                           if (typeof window !== 'undefined') {
                             localStorage.setItem('vlass_active_party_id', p.id)
@@ -190,7 +190,7 @@ export default function DashboardLayout({
                       </div>
                     ))}
                   </div>
-                  <div 
+                  <div
                     onClick={() => {
                       setIsSwitcherOpen(false)
                       if (typeof window !== 'undefined') {
@@ -250,7 +250,7 @@ export default function DashboardLayout({
             const Icon = item.icon
             const disabled = activePartyId === null
             const active = !disabled && isActive(item.href)
-            
+
             const content = (
               <motion.div
                 whileHover={disabled ? {} : { backgroundColor: active ? '#FFF1F2' : '#F1F5F9' }}
@@ -310,9 +310,9 @@ export default function DashboardLayout({
 
       {/* Main Content Area */}
       <main style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
-        
+
         {/* Topbar */}
-        <header style={{ 
+        <header style={{
           height: 64, background: 'white', borderBottom: '1px solid #E2E8F0',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px',
           position: 'sticky', top: 0, zIndex: 30
@@ -331,8 +331,8 @@ export default function DashboardLayout({
           {/* Right Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, position: 'relative' }}>
             <div style={{ position: 'relative' }}>
-              <button 
-                onClick={() => setShowNotificationPopup(!showNotificationPopup)} 
+              <button
+                onClick={() => setShowNotificationPopup(!showNotificationPopup)}
                 style={{ background: 'none', border: 'none', cursor: 'pointer', position: 'relative', display: 'flex', padding: 4 }}
               >
                 <Bell size={20} color="#64748B" />
@@ -363,8 +363,8 @@ export default function DashboardLayout({
                   >
                     <div style={{ padding: '16px 20px', borderBottom: '1px solid #F1F5F9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontWeight: 800, fontSize: 14, color: '#0F172A' }}>Notifikasi RSVP</span>
-                      <button 
-                        onClick={() => setShowNotificationPopup(false)} 
+                      <button
+                        onClick={() => setShowNotificationPopup(false)}
                         style={{ background: 'none', border: 'none', color: '#94A3B8', cursor: 'pointer', fontSize: 12, fontWeight: 700 }}
                       >
                         Tutup
@@ -386,13 +386,13 @@ export default function DashboardLayout({
                           <div key={g.id} style={{ padding: '12px 20px', borderBottom: '1px solid #F8FAFC', fontSize: 13, color: '#334155' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                               <span style={{ fontWeight: 800, color: '#0F172A' }}>{g.guest_name}</span>
-                              <span style={{ 
-                                padding: '2px 8px', 
-                                borderRadius: 100, 
-                                fontSize: 10, 
-                                fontWeight: 800, 
-                                background: g.status === 'attending' ? '#DCFCE7' : '#FEE2E2', 
-                                color: g.status === 'attending' ? '#15803D' : '#B91C1C' 
+                              <span style={{
+                                padding: '2px 8px',
+                                borderRadius: 100,
+                                fontSize: 10,
+                                fontWeight: 800,
+                                background: g.status === 'attending' ? '#DCFCE7' : '#FEE2E2',
+                                color: g.status === 'attending' ? '#15803D' : '#B91C1C'
                               }}>
                                 {g.status === 'attending' ? 'Hadir' : 'Absen'}
                               </span>
@@ -461,7 +461,8 @@ export default function DashboardLayout({
       </AnimatePresence>
 
       {/* Global Styles for Mobile */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .hide-on-desktop { display: none; }
         
         @media (max-width: 768px) {
