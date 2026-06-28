@@ -16,7 +16,7 @@ export default function InvitePage() {
       const stored = localStorage.getItem('vlass_parties')
       if (stored) {
         const parties = JSON.parse(stored)
-        const found = parties.find((p: any) => p.id === id || (p.customUrl && p.customUrl.toLowerCase() === id.toLowerCase()))
+        const found = parties.find((p: any) => p.id === id || (p.customUrl && typeof id === 'string' && p.customUrl.toLowerCase() === id.toLowerCase()))
         if (found) {
           setParty(found)
         }
