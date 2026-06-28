@@ -323,12 +323,12 @@ export default function ThemeRenderer({ party, scale = 1, forceOpen = false }: {
                       <motion.button 
                         onClick={() => {
                           if (!isNameValid) return;
-                          const guests = JSON.parse(localStorage.getItem('vlass_guests') || '[]');
+                          const guests = JSON.parse(localStorage.getItem('glyka_guests') || localStorage.getItem('vlass_guests') || '[]');
                           guests.push({ id: Date.now().toString(), party_id: party.id, guest_name: form.name.trim(), status: rsvpStatus === 'yes' ? 'attending' : 'declined', num_children: isKids ? (parseInt(form.children as any)||0) : 0, num_adults: isKids ? (parseInt(form.adults as any)||(rsvpStatus==='yes'?1:0)) : (rsvpStatus==='yes'?(form.plusOne?2:1):0), will_drop_off: isKids ? (willDropOff === 'yes') : null, dietary_restrictions: form.diet||'', source: 'invite', created_at: new Date().toISOString() });
-                          localStorage.setItem('vlass_guests', JSON.stringify(guests));
+                          localStorage.setItem('glyka_guests', JSON.stringify(guests));
                           
                           if (form.message.trim()) {
-                            const wishes = JSON.parse(localStorage.getItem('vlass_wishes') || '{}');
+                            const wishes = JSON.parse(localStorage.getItem('glyka_wishes') || localStorage.getItem('vlass_wishes') || '{}');
                             if (!wishes[party.id]) wishes[party.id] = [];
                             wishes[party.id].push({
                               id: Date.now().toString() + '_w',
@@ -337,7 +337,7 @@ export default function ThemeRenderer({ party, scale = 1, forceOpen = false }: {
                               date: new Date().toISOString(),
                               isFavorite: false
                             });
-                            localStorage.setItem('vlass_wishes', JSON.stringify(wishes));
+                            localStorage.setItem('glyka_wishes', JSON.stringify(wishes));
                             window.dispatchEvent(new Event('wishesUpdated'));
                           }
 
@@ -852,7 +852,7 @@ Catatan Pantangan/Alergi: *${dietStr}*`;
                         <div style={{ marginTop: 10, paddingTop: 8, borderTop: !isLightAdult ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(0,0,0,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
                           <span style={{ fontSize: 12 }}>📸</span>
                           <span style={{ fontSize: 11, fontWeight: 700, color: c.accentColor, fontFamily: c.fontFamily }}>
-                            {party.socialHashtag || `#${name.replace(/\s+/g, '')}Vlass2026`}
+                            {party.socialHashtag || `#${name.replace(/\s+/g, '')}Glyka2026`}
                           </span>
                         </div>
                       )}

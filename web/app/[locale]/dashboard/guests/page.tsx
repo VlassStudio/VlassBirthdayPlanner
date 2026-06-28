@@ -53,8 +53,8 @@ export default function GuestManagementPage() {
 
   // ── Data loader ─────────────────────────────────────────────────────────────
   const loadPartyAndGuests = useCallback(() => {
-    const p   = localStorage.getItem('vlass_parties')
-    const aId = localStorage.getItem('vlass_active_party_id')
+    const p   = localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties')
+    const aId = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
     if (p && aId) {
       const parties = JSON.parse(p)
       const active  = parties.find((party: any) => party.id === aId)
@@ -62,7 +62,7 @@ export default function GuestManagementPage() {
     } else {
       setActiveParty(null)
     }
-    const storedGuests = localStorage.getItem('vlass_guests')
+    const storedGuests = localStorage.getItem('glyka_guests') || localStorage.getItem('vlass_guests')
     if (storedGuests && aId) {
       const parsed = JSON.parse(storedGuests)
       setGuests(parsed.filter((g: any) => g.party_id === aId))
@@ -125,7 +125,7 @@ export default function GuestManagementPage() {
 
   // ── Helpers ─────────────────────────────────────────────────────────────────
   const saveGuests = (updated: any[]) => {
-    localStorage.setItem('vlass_guests', JSON.stringify(updated))
+    localStorage.setItem('glyka_guests', JSON.stringify(updated))
     window.dispatchEvent(new Event('guestsUpdated'))
   }
 

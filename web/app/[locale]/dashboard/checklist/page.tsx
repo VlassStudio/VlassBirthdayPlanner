@@ -67,8 +67,8 @@ export default function ChecklistPage() {
   useEffect(() => {
     setIsClient(true)
     if (typeof window !== 'undefined') {
-      const savedParties = localStorage.getItem('vlass_parties')
-      const activeId = localStorage.getItem('vlass_active_party_id')
+      const savedParties = localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties')
+      const activeId = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
       
       if (savedParties && activeId) {
         const parsedParties = JSON.parse(savedParties)
@@ -82,8 +82,8 @@ export default function ChecklistPage() {
 
       // Listener for party switching
       const handlePartyUpdate = () => {
-        const pStr = localStorage.getItem('vlass_parties')
-        const aIdStr = localStorage.getItem('vlass_active_party_id')
+        const pStr = localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties')
+        const aIdStr = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
         if (pStr && aIdStr) {
           const parsed = JSON.parse(pStr)
           setParties(parsed)
@@ -107,7 +107,7 @@ export default function ChecklistPage() {
   const initializeChecklist = (partyId: string, partyType: string) => {
     if (typeof window === 'undefined') return
     
-    const savedChecklistsStr = localStorage.getItem('vlass_checklists')
+    const savedChecklistsStr = localStorage.getItem('glyka_checklists') || localStorage.getItem('vlass_checklists')
     let checklists = savedChecklistsStr ? JSON.parse(savedChecklistsStr) : {}
     
     if (checklists[partyId]) {
@@ -117,7 +117,7 @@ export default function ChecklistPage() {
       const defaults = partyType === 'adult' ? defaultAdultTasks : defaultKidsTasks
       const clonedDefaults = defaults.map(t => ({ ...t, isCustom: false }))
       checklists[partyId] = clonedDefaults
-      localStorage.setItem('vlass_checklists', JSON.stringify(checklists))
+      localStorage.setItem('glyka_checklists', JSON.stringify(checklists))
       setTasks(clonedDefaults)
     }
   }
@@ -128,10 +128,10 @@ export default function ChecklistPage() {
     setTasks(newTasks)
     
     if (typeof window !== 'undefined') {
-      const savedChecklistsStr = localStorage.getItem('vlass_checklists')
+      const savedChecklistsStr = localStorage.getItem('glyka_checklists') || localStorage.getItem('vlass_checklists')
       let checklists = savedChecklistsStr ? JSON.parse(savedChecklistsStr) : {}
       checklists[activeParty.id] = newTasks
-      localStorage.setItem('vlass_checklists', JSON.stringify(checklists))
+      localStorage.setItem('glyka_checklists', JSON.stringify(checklists))
     }
   }
 
@@ -267,7 +267,7 @@ export default function ChecklistPage() {
     setParties(updatedParties)
     
     if (typeof window !== 'undefined') {
-      localStorage.setItem('vlass_parties', JSON.stringify(updatedParties))
+      localStorage.setItem('glyka_parties', JSON.stringify(updatedParties))
       window.dispatchEvent(new Event('partyUpdated'))
     }
   }

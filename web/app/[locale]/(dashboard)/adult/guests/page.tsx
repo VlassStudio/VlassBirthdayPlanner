@@ -25,9 +25,9 @@ export default function AdultGuestsPage() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const activePartyId = localStorage.getItem('vlass_active_party_id')
+      const activePartyId = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
       const loadGuests = () => {
-        const storedGuests = localStorage.getItem('vlass_guests')
+        const storedGuests = localStorage.getItem('glyka_guests') || localStorage.getItem('vlass_guests')
         if (storedGuests) {
           const parsed = JSON.parse(storedGuests)
           setGuests(parsed.filter((g: any) => g.party_id === activePartyId))
@@ -99,11 +99,11 @@ export default function AdultGuestsPage() {
             </button>
           ))}
           <button onClick={() => {
-            const storedGuests = localStorage.getItem('vlass_guests') || '[]';
+            const storedGuests = localStorage.getItem('glyka_guests') || localStorage.getItem('vlass_guests') || '[]';
             const guestsArray = JSON.parse(storedGuests);
             guestsArray.push({
               id: Date.now().toString(),
-              party_id: localStorage.getItem('vlass_active_party_id'),
+              party_id: localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id'),
               guest_name: 'New Guest (Manual)',
               status: 'attending',
               num_children: 0,
@@ -115,7 +115,7 @@ export default function AdultGuestsPage() {
               source: 'manual',
               created_at: new Date().toISOString()
             });
-            localStorage.setItem('vlass_guests', JSON.stringify(guestsArray));
+            localStorage.setItem('glyka_guests', JSON.stringify(guestsArray));
             window.dispatchEvent(new Event('guestsUpdated'));
           }} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 14px', borderRadius: 10, border: 'none', background: '#C9A84C', color: '#09090B', fontWeight: 700, fontSize: 12, cursor: 'pointer', fontFamily: 'var(--font-jakarta)' }}>
             <Plus size={14} strokeWidth={3} /> Add Manual
@@ -175,7 +175,7 @@ export default function AdultGuestsPage() {
                     const updated = guests.filter(g => g.id !== r.id);
                     setGuests(updated);
                     if (typeof window !== 'undefined') {
-                      localStorage.setItem('vlass_guests', JSON.stringify(updated));
+                      localStorage.setItem('glyka_guests', JSON.stringify(updated));
                       window.dispatchEvent(new Event('guestsUpdated'));
                     }
                   }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#EF4444', padding: 4 }}>

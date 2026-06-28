@@ -36,25 +36,25 @@ export default function DashboardLayout({
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const savedParties = localStorage.getItem('vlass_parties')
+      const savedParties = localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties')
       if (savedParties) setParties(JSON.parse(savedParties))
 
-      const activeId = localStorage.getItem('vlass_active_party_id')
+      const activeId = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
       setActivePartyId(activeId)
 
-      const savedGuests = localStorage.getItem('vlass_guests')
+      const savedGuests = localStorage.getItem('glyka_guests') || localStorage.getItem('vlass_guests')
       if (savedGuests) setAllGuests(JSON.parse(savedGuests))
 
       // Listen for custom event when parties change in other components
       const handleStorageChange = () => {
-        const p = localStorage.getItem('vlass_parties')
+        const p = localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties')
         if (p) setParties(JSON.parse(p))
-        const aId = localStorage.getItem('vlass_active_party_id')
+        const aId = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
         setActivePartyId(aId)
       }
 
       const handleGuestsUpdate = () => {
-        const g = localStorage.getItem('vlass_guests')
+        const g = localStorage.getItem('glyka_guests') || localStorage.getItem('vlass_guests')
         if (g) setAllGuests(JSON.parse(g))
       }
 
@@ -176,7 +176,7 @@ export default function DashboardLayout({
                         key={p.id}
                         onClick={() => {
                           if (typeof window !== 'undefined') {
-                            localStorage.setItem('vlass_active_party_id', p.id)
+                            localStorage.setItem('glyka_active_party_id', p.id)
                             window.dispatchEvent(new Event('partyUpdated'))
                             router.push(`/${locale}/dashboard`)
                             setIsSwitcherOpen(false)
@@ -194,6 +194,7 @@ export default function DashboardLayout({
                     onClick={() => {
                       setIsSwitcherOpen(false)
                       if (typeof window !== 'undefined') {
+                        localStorage.removeItem('glyka_active_party_id')
                         localStorage.removeItem('vlass_active_party_id')
                         window.dispatchEvent(new Event('partyUpdated'))
                         router.push(`/${locale}/dashboard?action=create`)
@@ -299,7 +300,7 @@ export default function DashboardLayout({
             </div>
             <div style={{ flex: 1 }}>
               <p style={{ margin: 0, fontSize: 13, fontWeight: 700, color: '#0F172A' }}>My Account</p>
-              <p style={{ margin: 0, fontSize: 11, color: '#64748B', fontWeight: 500 }}>Vlass User</p>
+              <p style={{ margin: 0, fontSize: 11, color: '#64748B', fontWeight: 500 }}>Glyka User</p>
             </div>
             <button onClick={() => window.location.href = '/login'} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4, display: 'flex' }}>
               <LogOut size={16} color="#94A3B8" />

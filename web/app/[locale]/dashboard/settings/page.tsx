@@ -33,8 +33,8 @@ export default function SettingsPage() {
   useEffect(() => {
     setIsClient(true)
     if (typeof window !== 'undefined') {
-      const parties = JSON.parse(localStorage.getItem('vlass_parties') || '[]')
-      const activeId = localStorage.getItem('vlass_active_party_id')
+      const parties = JSON.parse(localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties') || '[]')
+      const activeId = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
       if (parties && activeId) {
         const active = parties.find((p: any) => p.id === activeId)
         setActiveParty(active)
@@ -51,7 +51,7 @@ export default function SettingsPage() {
     setIsSaving(true)
     
     setTimeout(() => {
-      const parties = JSON.parse(localStorage.getItem('vlass_parties') || '[]')
+      const parties = JSON.parse(localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties') || '[]')
       
       // Check duplicate URL
       const isDuplicate = parties.some((p: any) => p.id !== activeParty.id && p.customUrl === customUrl && customUrl !== '')
@@ -67,7 +67,7 @@ export default function SettingsPage() {
           : p
       )
       
-      localStorage.setItem('vlass_parties', JSON.stringify(updatedParties))
+      localStorage.setItem('glyka_parties', JSON.stringify(updatedParties))
       setActiveParty(updatedParties.find((p: any) => p.id === activeParty.id))
       
       // Dispatch event to update sidebar
@@ -80,7 +80,7 @@ export default function SettingsPage() {
   const handleResetData = () => {
     if (!activeParty) return
     // Remove all associated data for this party
-    const keysToReset = ['vlass_guests', 'vlass_rundown', 'vlass_wishes', 'vlass_checklist', 'vlass_budget_items', 'vlass_budget_config']
+    const keysToReset = ['glyka_guests', 'glyka_rundown', 'glyka_wishes', 'glyka_checklist', 'glyka_budget_items', 'glyka_budget_config', 'vlass_guests', 'vlass_rundown', 'vlass_wishes', 'vlass_checklist', 'vlass_budget_items', 'vlass_budget_config']
     keysToReset.forEach(key => {
       const data = JSON.parse(localStorage.getItem(key) || '{}')
       delete data[activeParty.id]
@@ -100,15 +100,16 @@ export default function SettingsPage() {
     if (!activeParty) return
     
     // Remove from parties list
-    const parties = JSON.parse(localStorage.getItem('vlass_parties') || '[]')
+    const parties = JSON.parse(localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties') || '[]')
     const updatedParties = parties.filter((p: any) => p.id !== activeParty.id)
-    localStorage.setItem('vlass_parties', JSON.stringify(updatedParties))
+    localStorage.setItem('glyka_parties', JSON.stringify(updatedParties))
     
     // Clear active ID
+    localStorage.removeItem('glyka_active_party_id')
     localStorage.removeItem('vlass_active_party_id')
     
     // Remove all associated data
-    const keysToReset = ['vlass_guests', 'vlass_rundown', 'vlass_wishes', 'vlass_checklist', 'vlass_budget_items', 'vlass_budget_config']
+    const keysToReset = ['glyka_guests', 'glyka_rundown', 'glyka_wishes', 'glyka_checklist', 'glyka_budget_items', 'glyka_budget_config', 'vlass_guests', 'vlass_rundown', 'vlass_wishes', 'vlass_checklist', 'vlass_budget_items', 'vlass_budget_config']
     keysToReset.forEach(key => {
       const data = JSON.parse(localStorage.getItem(key) || '{}')
       delete data[activeParty.id]

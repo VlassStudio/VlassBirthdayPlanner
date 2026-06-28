@@ -13,7 +13,7 @@ export default function InvitePage() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('vlass_parties')
+      const stored = localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties')
       if (stored) {
         const parties = JSON.parse(stored)
         const found = parties.find((p: any) => p.id === id || (p.customUrl && typeof id === 'string' && p.customUrl.toLowerCase() === id.toLowerCase()))

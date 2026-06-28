@@ -858,7 +858,7 @@ export default function LandingPage() {
                   <PartyPopper size={28} color="white" />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <span style={{ fontWeight: 900, fontSize: 28, color: 'white', letterSpacing: '-0.02em', lineHeight: 1 }}>Vlass</span>
+                  <span style={{ fontWeight: 900, fontSize: 28, color: 'white', letterSpacing: '-0.02em', lineHeight: 1 }}>Glyka</span>
                   <span style={{ fontWeight: 800, fontSize: 14, color: '#FF3366', letterSpacing: '0.05em', textTransform: 'uppercase' }}>PartyBox</span>
                 </div>
               </div>
@@ -867,13 +867,13 @@ export default function LandingPage() {
               </p>
               {/* Social icons */}
               <div style={{ display: 'flex', gap: 16, marginTop: 8 }}>
-                <Link href="https://instagram.com/vlass.studio" target="_blank" style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', cursor: 'pointer', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
+                <Link href="https://instagram.com/glyka.studio" target="_blank" style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', cursor: 'pointer', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
                 </Link>
-                <Link href="https://twitter.com/vlass_studio" target="_blank" style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', cursor: 'pointer', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
+                <Link href="https://twitter.com/glyka_studio" target="_blank" style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', cursor: 'pointer', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" /></svg>
                 </Link>
-                <Link href="https://youtube.com/@vlass.studio" target="_blank" style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', cursor: 'pointer', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
+                <Link href="https://youtube.com/@glyka.studio" target="_blank" style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', cursor: 'pointer', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 7.1C2.5 7.1 2 9.5 2 12c0 2.5.5 4.9.5 4.9 0 0 2.5 1.1 9.5 1.1s9.5-1.1 9.5-1.1c0 0 .5-2.4.5-4.9 0-2.5-.5-4.9-.5-4.9 0 0-2.5-1.1-9.5-1.1C5 6 2.5 7.1 2.5 7.1z" /><path d="m9.75 15.02 5.75-3.02-5.75-3.02z" /></svg>
                 </Link>
               </div>
@@ -894,14 +894,14 @@ export default function LandingPage() {
               <h4 style={{ color: 'white', fontWeight: 800, marginBottom: 24, fontSize: 18, letterSpacing: '0.05em' }}>Bantuan</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 16 }}>
                 <li><Link href="#faq" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 16, fontWeight: 500, transition: 'color 0.2s ease' }}>Pusat Bantuan (FAQ)</Link></li>
-                <li><a href="mailto:support@vlass.studio" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 16, fontWeight: 500, transition: 'color 0.2s ease' }}>Hubungi Tim Support</a></li>
+                <li><a href="mailto:support@glyka.studio" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 16, fontWeight: 500, transition: 'color 0.2s ease' }}>Hubungi Tim Support</a></li>
               </ul>
             </div>
           </div>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 40, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <p style={{ margin: 0, fontSize: 16, color: '#71717A', fontWeight: 500, textAlign: 'center', lineHeight: 1.6 }}>
-              © 2026 Glyka PartyBox  - Birthday planning and invitation.<br />
+              © 2026 Glyka PartyBox - Birthday planning and invitation.<br />
               A product by <strong>Vlass Studio</strong>. Dibuat dengan <Heart size={16} style={{ display: 'inline', color: '#FF3366', margin: '0 4px', verticalAlign: 'text-bottom' }} fill="#FF3366" /> untuk senyum Anda.
             </p>
           </div>

@@ -102,7 +102,7 @@ export default function EditorPage() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('vlass_parties')
+      const stored = localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties')
       if (stored) {
         const parties = JSON.parse(stored)
         const found = parties.find((p: any) => p.id === id)
@@ -135,11 +135,11 @@ export default function EditorPage() {
   const handleSave = () => {
     if (!party) return
     const updatedParty = { ...party, theme: selectedTheme, customText: texts }
-    const stored = localStorage.getItem('vlass_parties')
+    const stored = localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties')
     if (stored) {
       const parties = JSON.parse(stored)
       const newParties = parties.map((p: any) => p.id === id ? updatedParty : p)
-      localStorage.setItem('vlass_parties', JSON.stringify(newParties))
+      localStorage.setItem('glyka_parties', JSON.stringify(newParties))
       setParty(updatedParty)
       window.dispatchEvent(new Event('partyUpdated'))
       setSaved(true)

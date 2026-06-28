@@ -1,8 +1,8 @@
-# Project Overview: Vlass PartyBox
+# Project Overview: Glyka PartyBox 
 **Tanggal Pembaruan Terakhir**: Juni 2026
 
 ## Ringkasan Proyek
-Vlass PartyBox adalah platform *all-in-one* berbasis web yang berfungsi sebagai **Perencana Pesta (Birthday Planner)** yang interaktif. Platform ini dirancang untuk memecahkan kerumitan mengelola acara ulang tahun dengan memisahkan pengalaman pengguna ke dalam **Dua Dunia (Two Worlds)**:
+Glyka PartyBox adalah platform *all-in-one* berbasis web yang berfungsi sebagai **Perencana Pesta (Birthday Planner)** yang interaktif. Platform ini dirancang untuk memecahkan kerumitan mengelola acara ulang tahun dengan memisahkan pengalaman pengguna ke dalam **Dua Dunia (Two Worlds)**:
 1. **Mode Anak 🧒**: Fokus pada aspek keamanan (pelacakan alergi, konfirmasi *drop-off* anak, registri hadiah mainan) dan desain yang ceria (Dinosaurus, Unicorn).
 2. **Mode Dewasa 🥂**: Fokus pada keanggunan (manajemen anggaran/minuman, instruksi *dress-code*, integrasi kalender) dan desain elegan (Minimalist, Neon, Retro).
 

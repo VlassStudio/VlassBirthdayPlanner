@@ -57,7 +57,7 @@ export default function DashboardPage() {
     const updatedParties = parties.map(p => p.id === activePartyId ? { ...p, ...updatedProps } : p)
     setParties(updatedParties)
     if (typeof window !== 'undefined') {
-      localStorage.setItem('vlass_parties', JSON.stringify(updatedParties))
+      localStorage.setItem('glyka_parties', JSON.stringify(updatedParties))
       window.dispatchEvent(new Event('partyUpdated'))
     }
   }
@@ -67,7 +67,7 @@ export default function DashboardPage() {
     if (!activePartyId) return
     
     // Load budget
-    const savedBudgetsStr = localStorage.getItem('vlass_budgets')
+    const savedBudgetsStr = localStorage.getItem('glyka_budgets') || localStorage.getItem('vlass_budgets')
     if (savedBudgetsStr) {
       const budgets = JSON.parse(savedBudgetsStr)
       if (budgets[activePartyId]) {
@@ -90,7 +90,7 @@ export default function DashboardPage() {
     if (currentParty) {
       setDressCodeTitleInput(currentParty.dressCodeTitle || 'Smart Casual Elegan')
       setDressCodeDescInput(currentParty.dressCodeDesc || 'Harap gunakan pakaian dengan nuansa monokrom (Hitam/Putih).')
-      setHashtagInput(currentParty.socialHashtag || `#${currentParty.name.replace(/\s+/g, '')}Vlass2026`)
+      setHashtagInput(currentParty.socialHashtag || `#${currentParty.name.replace(/\s+/g, '')}Glyka2026`)
       setWishlistInput(currentParty.toyWishlistLink || '')
       setHostPhoneInput(currentParty.hostPhone || '')
       setSelectedThemePreview(currentParty.theme || null)
@@ -129,22 +129,22 @@ export default function DashboardPage() {
   useEffect(() => { 
     setIsClient(true)
     if (typeof window !== 'undefined') {
-      const savedParties = localStorage.getItem('vlass_parties')
+      const savedParties = localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties')
       if (savedParties) setParties(JSON.parse(savedParties))
-      const activeId = localStorage.getItem('vlass_active_party_id')
+      const activeId = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
       setActivePartyId(activeId)
 
-      const savedGuests = localStorage.getItem('vlass_guests')
+      const savedGuests = localStorage.getItem('glyka_guests') || localStorage.getItem('vlass_guests')
       if (savedGuests) setAllGuests(JSON.parse(savedGuests))
 
       const handleUpdate = () => {
-        const p = localStorage.getItem('vlass_parties')
+        const p = localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties')
         if (p) setParties(JSON.parse(p))
-        const aId = localStorage.getItem('vlass_active_party_id')
+        const aId = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
         setActivePartyId(aId)
       }
       const handleGuestsUpdate = () => {
-        const g = localStorage.getItem('vlass_guests')
+        const g = localStorage.getItem('glyka_guests') || localStorage.getItem('vlass_guests')
         if (g) setAllGuests(JSON.parse(g))
       }
       const handleOpenModal = () => {
@@ -227,14 +227,14 @@ export default function DashboardPage() {
       const newParty = { ...partyData, id: newId }
       updatedParties.push(newParty)
       if (typeof window !== 'undefined') {
-        localStorage.setItem('vlass_active_party_id', newId)
+        localStorage.setItem('glyka_active_party_id', newId)
         setActivePartyId(newId)
       }
     }
 
     setParties(updatedParties)
     if (typeof window !== 'undefined') {
-      localStorage.setItem('vlass_parties', JSON.stringify(updatedParties))
+      localStorage.setItem('glyka_parties', JSON.stringify(updatedParties))
       window.dispatchEvent(new Event('partyUpdated'))
     }
     setStep(1)
@@ -248,7 +248,7 @@ export default function DashboardPage() {
     const updatedParties = parties.map(p => p.id === targetId ? { ...p, tier: 'pro' } : p)
     setParties(updatedParties)
     if (typeof window !== 'undefined') {
-      localStorage.setItem('vlass_parties', JSON.stringify(updatedParties))
+      localStorage.setItem('glyka_parties', JSON.stringify(updatedParties))
       window.dispatchEvent(new Event('partyUpdated'))
     }
     setIsUpgradeModalOpen(false)
@@ -261,7 +261,7 @@ export default function DashboardPage() {
     const updatedParties = parties.map(p => p.id === activeParty.id ? { ...p, theme: themeId } : p)
     setParties(updatedParties)
     if (typeof window !== 'undefined') {
-      localStorage.setItem('vlass_parties', JSON.stringify(updatedParties))
+      localStorage.setItem('glyka_parties', JSON.stringify(updatedParties))
       window.dispatchEvent(new Event('partyUpdated'))
     }
   }
@@ -384,7 +384,7 @@ export default function DashboardPage() {
                 whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0,0,0,0.06)' }}
                 onClick={() => {
                   if (typeof window !== 'undefined') {
-                    localStorage.setItem('vlass_active_party_id', p.id)
+                    localStorage.setItem('glyka_active_party_id', p.id)
                     setActivePartyId(p.id)
                     window.dispatchEvent(new Event('partyUpdated'))
                     const url = new URL(window.location.href)
@@ -434,7 +434,7 @@ export default function DashboardPage() {
                     onClick={(e) => {
                       e.stopPropagation()
                       if (typeof window !== 'undefined') {
-                        localStorage.setItem('vlass_active_party_id', p.id)
+                        localStorage.setItem('glyka_active_party_id', p.id)
                         setActivePartyId(p.id)
                         window.dispatchEvent(new Event('partyUpdated'))
                         const url = new URL(window.location.href)
@@ -1113,7 +1113,7 @@ export default function DashboardPage() {
                                   });
                                   const url = canvas.toDataURL('image/png');
                                   const link = document.createElement('a');
-                                  link.download = `Tema-${activeParty.name.replace(/\s+/g, '-')}-Vlass.png`;
+                                  link.download = `Tema-${activeParty.name.replace(/\s+/g, '-')}-Glyka.png`;
                                   link.href = url;
                                   link.click();
                                   window.dispatchEvent(new CustomEvent('showToast', { detail: { message: '✅ Desain Tema berhasil diunduh!' } }));
@@ -1832,10 +1832,10 @@ export default function DashboardPage() {
                 <p style={{ fontSize: 14, color: '#64748B', lineHeight: 1.6, marginBottom: 24, fontWeight: 500 }}>
                   Tindakan ini <strong>tidak dapat dibatalkan</strong>. Semua data tamu, checklist, anggaran, dan undangan publik untuk pesta <strong>{(deletingParty || activeParty)?.name}</strong> akan dihapus secara permanen.
                 </p>
- 
+
                 <div style={{ width: '100%', textAlign: 'left', marginBottom: 24 }}>
                   <label style={{ fontSize: 12, fontWeight: 800, color: '#475569', display: 'block', marginBottom: 8 }}>
-                    MASUKKAN PASSWORD KONFIRMASI (Ketik: <span style={{ color: '#EF4444', fontFamily: 'monospace', fontWeight: 900 }}>vlass123</span>)
+                    MASUKKAN PASSWORD KONFIRMASI (Ketik: <span style={{ color: '#EF4444', fontFamily: 'monospace', fontWeight: 900 }}>glyka123</span>)
                   </label>
                   <input 
                     type="password" 
@@ -1856,7 +1856,7 @@ export default function DashboardPage() {
                     </span>
                   )}
                 </div>
- 
+
                 <div style={{ display: 'flex', gap: 12, width: '100%' }}>
                   <button 
                     onClick={() => {
@@ -1872,7 +1872,7 @@ export default function DashboardPage() {
                   </button>
                   <button 
                     onClick={() => {
-                      if (deletePassword !== 'vlass123') {
+                      if (deletePassword !== 'glyka123' && deletePassword !== 'vlass123') {
                         setDeleteError('⚠️ Password salah. Silakan masukkan password konfirmasi yang benar.')
                         return
                       }
@@ -1882,13 +1882,14 @@ export default function DashboardPage() {
                         const newParties = parties.filter(p => p.id !== targetParty.id);
                         setParties(newParties);
                         if (typeof window !== 'undefined') {
-                          localStorage.setItem('vlass_parties', JSON.stringify(newParties));
+                          localStorage.setItem('glyka_parties', JSON.stringify(newParties));
                           if (newParties.length > 0) {
                             if (activePartyId === targetParty.id) {
-                              localStorage.setItem('vlass_active_party_id', newParties[0].id);
+                              localStorage.setItem('glyka_active_party_id', newParties[0].id);
                               setActivePartyId(newParties[0].id);
                             }
                           } else {
+                            localStorage.removeItem('glyka_active_party_id');
                             localStorage.removeItem('vlass_active_party_id');
                             setActivePartyId(null);
                           }

@@ -1,9 +1,9 @@
 # Business Requirements Specification (BRS)
-**Project Name:** Vlass PartyBox (Birthday Planner)
+**Project Name:** Glyka PartyBox  (Birthday Planner)
 **Version:** 2.0 (Updated)
 
 ## 1. Executive Summary
-Vlass PartyBox is a premium B2C Web Application acting as a digital concierge for planning birthday parties. It transitions the chaotic process of party planning into a streamlined, visually stunning digital experience. The app uses a "Two Worlds" approach, catering distinctly to Kids' Parties (focusing on fun and safety) and Adult Parties (focusing on elegance and budget). The app utilizes a "Pay-per-Event" model, offering digital themes and advanced planning tools on a per-party basis.
+Glyka PartyBox is a premium B2C Web Application acting as a digital concierge for planning birthday parties. It transitions the chaotic process of party planning into a streamlined, visually stunning digital experience. The app uses a "Two Worlds" approach, catering distinctly to Kids' Parties (focusing on fun and safety) and Adult Parties (focusing on elegance and budget). The app utilizes a "Pay-per-Event" model, offering digital themes and advanced planning tools on a per-party basis.
 
 ## 2. Target Audience
 *   **Primary Audience:** Parents planning kids' birthdays, and Adults planning their own or friends' milestones (e.g., 21st, 30th, 50th).

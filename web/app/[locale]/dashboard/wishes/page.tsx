@@ -22,13 +22,13 @@ export default function WishesPage() {
   useEffect(() => {
     setIsClient(true)
     if (typeof window !== 'undefined') {
-      const parties = JSON.parse(localStorage.getItem('vlass_parties') || '[]')
-      const activeId = localStorage.getItem('vlass_active_party_id')
+      const parties = JSON.parse(localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties') || '[]')
+      const activeId = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
       if (parties && activeId) {
         const active = parties.find((p: any) => p.id === activeId)
         setActiveParty(active)
 
-        const storedWishes = JSON.parse(localStorage.getItem('vlass_wishes') || '{}')
+        const storedWishes = JSON.parse(localStorage.getItem('glyka_wishes') || localStorage.getItem('vlass_wishes') || '{}')
         if (storedWishes[activeId]) {
           setWishes(storedWishes[activeId])
         } else {
@@ -42,9 +42,9 @@ export default function WishesPage() {
     if (!activeParty) return
     const updated = wishes.map(w => w.id === id ? { ...w, isFavorite: !w.isFavorite } : w)
     setWishes(updated)
-    const storedWishes = JSON.parse(localStorage.getItem('vlass_wishes') || '{}')
+    const storedWishes = JSON.parse(localStorage.getItem('glyka_wishes') || localStorage.getItem('vlass_wishes') || '{}')
     storedWishes[activeParty.id] = updated
-    localStorage.setItem('vlass_wishes', JSON.stringify(storedWishes))
+    localStorage.setItem('glyka_wishes', JSON.stringify(storedWishes))
   }
 
   const deleteWish = (id: string) => {
@@ -53,9 +53,9 @@ export default function WishesPage() {
     
     const updated = wishes.filter(w => w.id !== id)
     setWishes(updated)
-    const storedWishes = JSON.parse(localStorage.getItem('vlass_wishes') || '{}')
+    const storedWishes = JSON.parse(localStorage.getItem('glyka_wishes') || localStorage.getItem('vlass_wishes') || '{}')
     storedWishes[activeParty.id] = updated
-    localStorage.setItem('vlass_wishes', JSON.stringify(storedWishes))
+    localStorage.setItem('glyka_wishes', JSON.stringify(storedWishes))
     
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('showToast', { detail: { message: '🗑️ Ucapan berhasil dihapus!' } }))

@@ -1,6 +1,6 @@
-# Prompt Guide: Building "Vlass PartyBox"
+# Prompt Guide: Building "Glyka PartyBox "
 
-This guide contains specific, optimized prompts to use with AI Coding Assistants to continue building or expanding the Vlass PartyBox web app using Next.js, Framer Motion, and Vanilla CSS.
+This guide contains specific, optimized prompts to use with AI Coding Assistants to continue building or expanding the Glyka PartyBox  web app using Next.js, Framer Motion, and Vanilla CSS.
 
 ## 1. Core Principles & Stack
 - **Framework:** Next.js (App Router).

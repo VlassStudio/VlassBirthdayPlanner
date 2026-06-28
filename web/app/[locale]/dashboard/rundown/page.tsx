@@ -27,14 +27,14 @@ export default function RundownPage() {
   useEffect(() => {
     setIsClient(true)
     if (typeof window !== 'undefined') {
-      const parties = JSON.parse(localStorage.getItem('vlass_parties') || '[]')
-      const activeId = localStorage.getItem('vlass_active_party_id')
+      const parties = JSON.parse(localStorage.getItem('glyka_parties') || localStorage.getItem('vlass_parties') || '[]')
+      const activeId = localStorage.getItem('glyka_active_party_id') || localStorage.getItem('vlass_active_party_id')
       if (parties && activeId) {
         const active = parties.find((p: any) => p.id === activeId)
         setActiveParty(active)
         
         // Load rundown
-        const storedRundown = JSON.parse(localStorage.getItem('vlass_rundown') || '{}')
+        const storedRundown = JSON.parse(localStorage.getItem('glyka_rundown') || localStorage.getItem('vlass_rundown') || '{}')
         if (storedRundown[activeId]) {
           setEvents(storedRundown[activeId])
         } else {
@@ -64,9 +64,9 @@ export default function RundownPage() {
   const saveRundown = (partyId: string, updatedEvents: RundownEvent[], autoSort = true) => {
     const finalEvents = autoSort ? [...updatedEvents].sort((a, b) => a.time.localeCompare(b.time)) : updatedEvents;
     setEvents(finalEvents)
-    const stored = JSON.parse(localStorage.getItem('vlass_rundown') || '{}')
+    const stored = JSON.parse(localStorage.getItem('glyka_rundown') || localStorage.getItem('vlass_rundown') || '{}')
     stored[partyId] = finalEvents
-    localStorage.setItem('vlass_rundown', JSON.stringify(stored))
+    localStorage.setItem('glyka_rundown', JSON.stringify(stored))
   }
 
   const handleMove = (index: number, direction: 'up' | 'down') => {
