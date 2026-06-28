@@ -40,7 +40,7 @@ export default function RegisterPage() {
           <div style={{ width: 40, height: 40, borderRadius: 12, background: 'linear-gradient(135deg, #FF3366, #FF9933)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'rotate(-10deg)' }}>
             <PartyPopper size={20} color="white" />
           </div>
-          <span style={{ fontWeight: 900, fontSize: 24, letterSpacing: '-0.03em', color: '#FF3366' }}>Glyka Party box</span>
+          <span style={{ fontWeight: 900, fontSize: 24, letterSpacing: '-0.03em', color: '#FF3366' }}>Glyka PartyBox</span>
           <span style={{ fontSize: 12, fontWeight: 600, color: '#64748b', marginLeft: 8 }}></span>
         </div>
 
