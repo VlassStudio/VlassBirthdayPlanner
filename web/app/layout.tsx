@@ -9,7 +9,7 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: { default: 'Vlass PartyBox — Perencana Pesta Ulang Tahun Digital', template: '%s | Vlass PartyBox' },
+  title: { default: 'Glyka Party box by Vlass — Perencana Pesta Ulang Tahun Digital', template: '%s | Glyka Party box by Vlass' },
   description: 'Platform terbaik untuk merencanakan pesta ulang tahun. Mulai dari undangan digital, manajemen RSVP, daftar tamu, hingga anggaran.',
 }
 

@@ -343,7 +343,8 @@ export default function LandingPage() {
           }}>
             <PartyPopper size={22} color="white" />
           </div>
-          <span style={{ fontWeight: 900, fontSize: 26, letterSpacing: '-0.03em', color: '#FF3366' }}>Vlass PartyBox</span>
+          <span style={{ fontWeight: 900, fontSize: 26, letterSpacing: '-0.03em', color: '#FF3366' }}>Glyka Party box</span>
+          <span style={{ fontSize: 14, fontWeight: 600, color: '#64748b', marginLeft: 8 }}>by Vlass</span>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
@@ -552,7 +553,7 @@ export default function LandingPage() {
               Pesta Impian dalam 3 Langkah
             </h2>
             <p style={{ fontSize: 'clamp(16px, 2.5vw, 22px)', color: '#71717A', fontWeight: 600, maxWidth: 600, margin: '0 auto' }}>
-              Tidak perlu keahlian desain atau coding. Vlass PartyBox melakukan semua pekerjaan berat untuk Anda.
+              Tidak perlu keahlian desain atau coding. Glyka Party box melakukan semua pekerjaan berat untuk Anda.
             </p>
           </div>
 
@@ -741,7 +742,7 @@ export default function LandingPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: 32, borderRadius: 24, border: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ display: 'flex', gap: 4, color: '#FCD34D', marginBottom: 20 }}><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /></div>
-              <p style={{ fontSize: 18, lineHeight: 1.6, marginBottom: 24, color: '#E4E4E7' }}>"Vlass PartyBox membuat persiapan pesta Alisha jadi super mudah! Undangan digitalnya keren banget, teman-teman semua tanya bikin di mana 😍"</p>
+              <p style={{ fontSize: 18, lineHeight: 1.6, marginBottom: 24, color: '#E4E4E7' }}>"Glyka Party box membuat persiapan pesta Alisha jadi super mudah! Undangan digitalnya keren banget, teman-teman semua tanya bikin di mana 😍"</p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
                 <div style={{ width: 48, height: 48, background: '#FF3366', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900 }}>SD</div>
                 <div>
@@ -828,7 +829,7 @@ export default function LandingPage() {
               Ubah Pesta Impian<br />Menjadi Kenyataan
             </h2>
             <p style={{ fontSize: 22, fontWeight: 600, color: 'rgba(255,255,255,0.9)', marginBottom: 48, maxWidth: 600 }}>
-              Bergabunglah dengan ribuan orang yang sudah merasakan kemudahan merencanakan pesta bersama Vlass PartyBox.
+              Bergabunglah dengan ribuan orang yang sudah merasakan kemudahan merencanakan pesta bersama Glyka Party box.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link href="/register" style={{ display: 'inline-flex', alignItems: 'center', gap: 12, padding: '24px 48px', background: 'white', color: '#FF3366', borderRadius: 100, fontSize: 20, fontWeight: 900, textDecoration: 'none', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
@@ -900,7 +901,7 @@ export default function LandingPage() {
           
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 40, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
             <p style={{ margin: 0, fontSize: 16, color: '#71717A', fontWeight: 500, textAlign: 'center', lineHeight: 1.6 }}>
-              © 2026 Vlass PartyBox - Birthday planning and invitation.<br/>
+              © 2026 Glyka Party box by Vlass - Birthday planning and invitation.<br/>
               A product by <strong>Vlass Studio</strong>. Dibuat dengan <Heart size={16} style={{ display: 'inline', color: '#FF3366', margin: '0 4px', verticalAlign: 'text-bottom' }} fill="#FF3366" /> untuk senyum Anda.
             </p>
           </div>

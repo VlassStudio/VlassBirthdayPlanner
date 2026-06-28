@@ -131,7 +131,8 @@ export default function DashboardLayout({
           }}>
             <PartyPopper size={20} color="white" />
           </div>
-          <span style={{ fontWeight: 900, fontSize: 20, color: '#0F172A', letterSpacing: '-0.03em' }}>Vlass PartyBox</span>
+          <span style={{ fontWeight: 900, fontSize: 20, color: '#0F172A', letterSpacing: '-0.03em' }}>Glyka Party box</span>
+          <span style={{ fontSize: 12, fontWeight: 600, color: '#64748b', marginLeft: 6 }}>by Vlass</span>
         </div>
 
         {/* Event Switcher */}
